@@ -15,6 +15,7 @@ let jshint = require('gulp-jshint');
 let webserver = require('gulp-webserver');
 
 // File paths
+const PKG_NAME = 'bcc-package-seed';
 const CONFIG = {
 	PKG_NAME: 'bcc-package-seed',
 	VENDOR: [
@@ -28,7 +29,7 @@ const CONFIG = {
 		'src/app/**/*.js'
 	],
 	STYLES: {
-		MAIN: 'src/sass/' + CONFIG.PKG_NAME + '.scss',
+		MAIN: 'src/sass/' + PKG_NAME + '.scss',
 		PATH: 'src/sass/**/*.scss'
 	}
 };
@@ -150,7 +151,7 @@ gulp.task('dist:scripts', function () {
 		.pipe(babel({
 			presets: ['es2015']
 		}))
-		.pipe(concat('bcc-calendar.min.js'))
+		.pipe(concat(PKG_NAME + '.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/js'));
 });
