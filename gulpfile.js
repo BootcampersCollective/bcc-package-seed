@@ -17,7 +17,6 @@ let webserver = require('gulp-webserver');
 // File paths
 const PKG_NAME = 'bcc-package-seed';
 const CONFIG = {
-	PKG_NAME: 'bcc-package-seed',
 	VENDOR: [
 		'node_modules/angular/angular.js',
 		'node_modules/angular-animate/angular-animate.js',
