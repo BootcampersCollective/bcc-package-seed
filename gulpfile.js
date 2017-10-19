@@ -15,7 +15,7 @@ let jshint = require('gulp-jshint');
 let webserver = require('gulp-webserver');
 
 // File paths
-const PKG_NAME = 'bcc-package-seed';
+const PKG_NAME = 'mybox';
 const CONFIG = {
 	VENDOR: [
 		'node_modules/angular/angular.js',
@@ -95,7 +95,7 @@ gulp.task('dev:scripts', function () {
 		.pipe(babel({
 			presets: ['es2015']
 		}))
-		.pipe(concat(CONFIG.PKG_NAME + '.min.js'))
+		.pipe(concat(PKG_NAME + '.min.js'))
 		.pipe(uglify())
 		.pipe(sourceMaps.write())
 		.pipe(gulp.dest('dev/scripts'))
